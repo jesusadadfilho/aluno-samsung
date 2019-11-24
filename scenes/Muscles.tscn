@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/Costa.gd" type="Script" id=1]
+[ext_resource path="res://assets/muscles-front.png" type="Texture" id=2]
+[ext_resource path="res://assets/muscles-back.png" type="Texture" id=3]
+
+[node name="Muscles" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Frente" type="Sprite" parent="."]
+position = Vector2( 493.017, 294.413 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 2 )
+
+[node name="Abdomem" type="Area2D" parent="Frente"]
+modulate = Color( 0.0666667, 0.0156863, 0.0156863, 1 )
+self_modulate = Color( 0.458824, 0.0352941, 0.0352941, 1 )
+position = Vector2( 1.09662, -143.312 )
+gravity_point = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Frente/Abdomem"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -18.1185, 32.7528 )
+z_index = 1
+polygon = PoolVector2Array( -10.5803, 13.1413, 51.6091, 13.6885, 54.1056, -14.6052, 55.5571, -37.0824, 57.941, -51.0454, 52.492, -74.5442, 32.5938, -78.0093, 6.51617, -79.6526, -12.2147, -71.4792, -15.6203, -51.386, -14.1322, -37.0737, -13.6539, -12.6767 )
+
+[node name="Costa" type="Sprite" parent="."]
+visible = false
+position = Vector2( 500, 300 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 3 )
+normal_map = ExtResource( 3 )
+[connection signal="input_event" from="Frente/Abdomem" to="." method="_on_Abdomem_input_event"]
+[connection signal="mouse_entered" from="Frente/Abdomem" to="." method="_on_Abdomem_mouse_entered"]
