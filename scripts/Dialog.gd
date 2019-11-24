@@ -1,7 +1,8 @@
 extends Node2D
 
-onready var texto = $Polygon2D/texto
+onready var texto = $AnimationPlayer/DialogText/texto
 onready var tempo = $tempo
+onready var anim = $AnimationPlayer
 
 onready var stringPrinted = "This is a test"
 
@@ -9,6 +10,8 @@ onready var stringPrinted = "This is a test"
 func _ready():
 	tempo.set_wait_time(.1)
 	tempo.start()
+	anim.play("professor_show")
+	yield(anim, "animation_finished")
 	_writeText()
 
 
@@ -19,4 +22,5 @@ func _writeText():
 		texto.add_text(letter)
 		print(letter)
 		yield(tempo, "timeout")
+
 
