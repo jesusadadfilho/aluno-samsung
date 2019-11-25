@@ -18,4 +18,5 @@ func _on_Abdomem_mouse_entered():
 
 
 func _on_Abdomem_input_event(viewport, event, shape_idx):
-	print(event)
+	if event is InputEventScreenTouch :
+		print("Mostrar detalhes")
