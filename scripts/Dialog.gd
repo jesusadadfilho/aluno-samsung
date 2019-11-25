@@ -8,7 +8,7 @@ onready var stringPrinted = "This is a test"
 
 
 func _ready():
-	tempo.set_wait_time(.1)
+	tempo.set_wait_time(.01)
 	tempo.start()
 	anim.play("professor_show")
 	yield(anim, "animation_finished")
