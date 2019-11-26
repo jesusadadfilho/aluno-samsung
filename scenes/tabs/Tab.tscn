@@ -69,8 +69,6 @@ tab_align = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 40.0
-margin_right = -574.0
-margin_bottom = -482.0
 
 [node name="ItemList" type="ItemList" parent="TabContainer/Atividades"]
 margin_top = -8.0

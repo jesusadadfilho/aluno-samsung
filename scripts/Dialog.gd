@@ -8,7 +8,7 @@ onready var stringPrinted = "This is a test"
 
 
 func _ready():
-	tempo.set_wait_time(.1)
+	tempo.set_wait_time(.05)
 	tempo.start()
 	anim.play("professor_show")
 	yield(anim, "animation_finished")
@@ -20,7 +20,6 @@ func _writeText():
 	var letter = ""
 	for letter in stringPrinted:
 		texto.add_text(letter)
-		print(letter)
 		yield(tempo, "timeout")
 
 
